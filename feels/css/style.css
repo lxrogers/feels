@@ -1,0 +1,137 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index : -100;
+}
+
+body {
+  background-color: black;
+  margin: 0px;
+  overflow: hidden;
+
+  color: grey;
+  font
+}
+
+
+.section.top {
+  z-index : 1;
+  font-family: 'Open Sans';
+  padding: 10px;
+  color: #AAA;
+}
+
+#feel-again {
+  text-align: right;
+  cursor: pointer;
+  display: none;
+}
+
+#feel-again:hover {
+  color: white;
+}
+
+#today {
+  text-align: right;
+}
+
+#feel-color-selector {
+  margin-top: 5px;
+  border: solid; border-width: 1px; border-color: #DDD; border-radius: 5px;
+  width: 120%;
+
+  height: 0;
+  padding-bottom: 120%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#feel-color-selector:hover {
+  border-color: #FFF;
+}
+
+#reason {
+  font-family: 'Lora';
+  color: black;
+  text-align: left;
+}
+
+#reason-input {
+  width: 100%;
+  height: 5%;
+  background-color: transparent;
+  color: #DDD;
+  cursor: pointer;
+}
+
+#reason-input:hover {
+  
+}
+
+#add {
+  padding-top: 10px;
+}
+
+.circle-plus {height:6em; width:6em; font-size:.7em /*Will change icon size*/; cursor: pointer;}
+.circle-plus .circle {position: relative; width: 4.5em; height: 4.5em; border-radius: 100%; border: solid 2px #DDD;}
+.circle-plus .circle .horizontal {position: absolute; background-color: #DFDAD7; width: 2.4em; height: 2px; top: 2.2em; left: 1.05em;}
+.circle-plus .circle .vertical {position: absolute; background-color: #DFDAD7; width: 2px; height: 2.4em; top: 1.05em; left: 2.2em;}
+
+.circle-plus .circle:hover {
+  border-color: #FFF;
+  background-color: #222;
+}
+.circle-plus .circle .horizontal:hover {
+  border-color: #FFF;
+}
+.circle-plus .circle .vertical:hover {
+  border-color: #FFF;
+}
+
+.color-circle {
+  border-radius: 50%;
+  width: 70%;
+  padding-bottom: 70%;
+  background-color: white;
+  margin: 15%;
+  display: none;
+}
+
+#happy { background-color: #DA95ED; }
+
+#sad { background-color: #95EDC9; }
+
+#lost { background-color: #ff4d4d; }
+
+#bacon { background-color: #ffff80; }
+
+#elated {
+  background-color: red;
+}
+
+.section.feel {
+  color: white;
+  padding-top: 5%;
+  font-family: 'Lora';
+  text-align: center;
+}
+
+.main {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+#reason-text-container {
+  position: relative;
+}
+
+#reason-text {
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  width: 100%;
+  margin-left: 53%;
+  color: white;
+
+}
