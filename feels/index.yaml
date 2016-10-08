@@ -1,0 +1,8 @@
+indexes:
+- kind: Feel
+  ancestor: yes
+  properties:
+  - name: date
+    direction: desc
+  - name: color
+  - name: reason
