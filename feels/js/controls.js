@@ -77,6 +77,7 @@ function submit() {
 
 function feelAgain() {
 	feelAgainButton.hide();
+	hideReasonText();
 	addMyParticle();
 	disableNavigation();
 	$('.section.feel').show();
