@@ -2,13 +2,14 @@ var selectBox = $('#feel-color-selector');
 var reasonBox = $('#reason-input');
 var addButton = $('.circle-plus');
 var reasonText = $('#reason-text');
-var feelAgainButton = $('#feel-again');
+var feelAgainButton = $('#home');
 var selectBoxOpen = false;
 
 var current_color = 0;
 var count = $(".color-circle").length;
 var padding_basis = 120;
 var PADDING_HEIGHT = padding_basis + (count - 1) * (.85 * 120);
+var currently_feeling = true;
 
 openSelectBox = function() {
 	if (selectBox.css('opacity') == 0)
@@ -53,11 +54,11 @@ expandReasonBox = function() {
 }
 
 function submit() {
-	console.log(reasonBox.val())
 	if (reasonBox.val() == "") {
 		reasonBox.focus();
 		return;
 	}
+
 	$('.section.feel').animate(
 		{'opacity': 0},
 		500,
@@ -67,16 +68,16 @@ function submit() {
 			reasonBox.val('');
 		}
 	)
+
 	hideReasonText();
-	feelAgainButton.show();
 	enableNavigation();
 	sendFeel();
 	changeReasonText(reasonBox.val());
 	submitMyParticle(reasonBox.val());
+	currently_feeling = false;
 }
 
-function feelAgain() {
-	feelAgainButton.hide();
+function startFeeling() {
 	hideReasonText();
 	addMyParticle();
 	disableNavigation();
@@ -92,6 +93,16 @@ function feelAgain() {
 		500,
 		'easeOutCubic'
 	)
+	currently_feeling = true;
+}
+
+function feelAgain() {
+	if (!currently_feeling) {
+		startFeeling();
+	}
+	else {
+
+	}
 }
 
 //--------------SELECT BOX PARTICLE FUNCTIONS ---------------------//
@@ -154,14 +165,13 @@ selectBox.click(openSelectBox);
 reasonBox.click(expandReasonBox);
 addButton.click(submit);
 feelAgainButton.click(feelAgain)
+
 $('.color-circle').click(clickColor);
 
 function mouseDownProxy(e) {
-	console.log(e);
 	if (e.srcElement.id != "feel-again") {
 		visMouseDown(e);	
 	}
-	
 }
 
 function enableNavigation() {

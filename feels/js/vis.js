@@ -78,7 +78,6 @@ function addParticle(color, reason) {
 //---------------- MY PARTICLE --------------------//
 var MY_PARTICLE;
 function addMyParticle() {
-	console.log("new my particle")
 	var myParticle = new Particle(0, "");
 	myParticle.setPosition(0,0,500);
 	myParticle.setScale(17);

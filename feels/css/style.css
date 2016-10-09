@@ -22,6 +22,14 @@ body {
   color: #AAA;
 }
 
+#home {
+  cursor: pointer;
+}
+
+#home:hover {
+  color: white;
+}
+
 #feel-again {
   text-align: right;
   cursor: pointer;

@@ -37,8 +37,8 @@ Camera.prototype.zoomOriginal = function(callback) {
 	this.setTarget(
 			{
 				position : {
-					x : this._camera.position.x,
-					y : this._camera.position.y,
+					x : 0,
+					y : 0,
 					z : 0,
 			 	}
 			}, callback
