@@ -6,8 +6,8 @@ var ZOOM_DISTANCE = 250;
 var Camera = function() {
 	this._camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
 	this._camera.position.set( 0, 0, ZOOM_DISTANCE );
-
 	this._lock = false;
+
 	this._xVel = 0;
 	this._yVel = 0;
 	this._zVel = 0;
@@ -24,9 +24,13 @@ Camera.prototype.setTarget = function(target, callback) {
 Camera.prototype.stopIfFinished = function() {
 	if (Math.abs(this._camera.position.x - this._targetRef.position.x) < 2 &&
 			Math.abs(this._camera.position.y - this._targetRef.position.y) < 2 &&
-			Math.abs(this._camera.position.z - this._targetRef.position.z - ZOOM_DISTANCE) < 2) { // this part is broken
+			Math.abs(this._camera.position.z - this._targetRef.position.z - ZOOM_DISTANCE) < 2) {
 				this._animating = false;
 				this._lock = true;
+				this._camera.position.x = this._targetRef.position.x;
+				this._camera.position.y = this._targetRef.position.y;
+				this._camera.position.z = this._targetRef.position.z + ZOOM_DISTANCE;
+				
 				if (this._animationFinishedCallback) {
 					this._animationFinishedCallback()
 				};

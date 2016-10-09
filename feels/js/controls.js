@@ -2,7 +2,7 @@ var selectBox = $('#feel-color-selector');
 var reasonBox = $('#reason-input');
 var addButton = $('.circle-plus');
 var reasonText = $('#reason-text');
-var feelAgainButton = $('#home');
+var homeButton = $('#home');
 var selectBoxOpen = false;
 
 var current_color = 0;
@@ -82,17 +82,12 @@ function startFeeling() {
 	addMyParticle();
 	disableNavigation();
 	$('.section.feel').show();
-
-	myCamera.zoomOriginal(function() {
+	$('.section.feel').animate( {'opacity': 1}, 1000, 'easeOutCubic', function() {
 		placeMyParticle();
-		scaleMyParticle();	
+		scaleMyParticle();
 	});
 
-	$('.section.feel').animate(
-		{'opacity': 1},
-		500,
-		'easeOutCubic'
-	)
+	myCamera.zoomOriginal();
 	currently_feeling = true;
 }
 
@@ -164,12 +159,12 @@ centerReasonText();
 selectBox.click(openSelectBox);
 reasonBox.click(expandReasonBox);
 addButton.click(submit);
-feelAgainButton.click(feelAgain)
+homeButton.click(feelAgain)
 
 $('.color-circle').click(clickColor);
 
 function mouseDownProxy(e) {
-	if (e.srcElement.id != "feel-again") {
+	if (e.srcElement.id != "home") {
 		visMouseDown(e);	
 	}
 }
