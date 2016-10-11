@@ -139,6 +139,8 @@ function changeReasonText(text) {
 }
 
 function showReasonText() {
+	console.log("show reason text")
+	reasonText.stop();
 	reasonText.animate(
 		{'opacity': 1},
 		200,
@@ -146,6 +148,7 @@ function showReasonText() {
 }
 
 function hideReasonText(callback) {
+	reasonText.stop();
 	reasonText.animate(
 		{'opacity': 0},
 		200,
